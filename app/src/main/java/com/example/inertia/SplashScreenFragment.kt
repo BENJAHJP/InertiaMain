@@ -7,6 +7,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 
 class SplashScreenFragment : Fragment() {
@@ -14,6 +17,7 @@ class SplashScreenFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val view = inflater.inflate(R.layout.fragment_splash_screen, container, false)
 
         Handler().postDelayed({
             if(onBoardingFinished()){
@@ -22,7 +26,16 @@ class SplashScreenFragment : Fragment() {
                 findNavController().navigate(R.id.action_splashScreenFragment_to_onBoardingFragment)
             }
         },3000)
-        return inflater.inflate(R.layout.fragment_splash_screen, container, false)
+
+        val textView = view.findViewById<TextView>(R.id.splashText)
+        val imageView = view.findViewById<ImageView>(R.id.splashImage)
+        val topAnimation = AnimationUtils.loadAnimation(context,R.anim.top_animation)
+        val bottomAnimation = AnimationUtils.loadAnimation(context, R.anim.bottom_animation)
+
+        textView.startAnimation(topAnimation)
+        imageView.startAnimation(bottomAnimation)
+
+        return view
     }
 
     private fun onBoardingFinished(): Boolean{
