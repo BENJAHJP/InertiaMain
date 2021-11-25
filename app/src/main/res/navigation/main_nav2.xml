@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav2"
+    app:startDestination="@id/exploreFragment2">
+
+    <fragment
+        android:id="@+id/exploreFragment2"
+        android:name="com.example.inertia.Dashboard.ExploreFragment"
+        android:label="fragment_explore"
+        tools:layout="@layout/fragment_explore" />
+    <fragment
+        android:id="@+id/buildFragment2"
+        android:name="com.example.inertia.Dashboard.BuildFragment"
+        android:label="fragment_build"
+        tools:layout="@layout/fragment_build" />
+    <fragment
+        android:id="@+id/trainFragment2"
+        android:name="com.example.inertia.Dashboard.TrainFragment"
+        android:label="fragment_train"
+        tools:layout="@layout/fragment_train" />
+</navigation>
