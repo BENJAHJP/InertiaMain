@@ -4,9 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Administrator/StudioProjects/Inertia2/app/src/main/res/drawable/ic_create_your_own_models.xml" value="0.22916666666666666" />
+        <entry key="..\:/Users/Administrator/StudioProjects/Inertia2/app/src/main/res/layout/activity_main.xml" value="0.21302083333333333" />
         <entry key="..\:/Users/Administrator/StudioProjects/Inertia2/app/src/main/res/layout/fragment_screen1.xml" value="0.21302083333333333" />
         <entry key="..\:/Users/Administrator/StudioProjects/Inertia2/app/src/main/res/layout/fragment_welcome_screen1.xml" value="0.21302083333333333" />
-        <entry key="..\:/Users/Administrator/StudioProjects/Inertia2/app/src/main/res/layout/slide_layout.xml" value="0.22" />
+        <entry key="..\:/Users/Administrator/StudioProjects/Inertia2/app/src/main/res/layout/slide_layout.xml" value="0.33" />
       </map>
     </option>
   </component>
@@ -15,5 +16,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.33" />
+      </ProjectState>
+    </option>
   </component>
 </project>
