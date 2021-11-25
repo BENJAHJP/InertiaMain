@@ -7,9 +7,13 @@
 
     <fragment
         android:id="@+id/exploreFragment2"
-        android:name="com.example.inertia.Dashboard.ExploreFragment"
+        android:name="com.example.inertia.Dashboard.explore.ExploreFragment"
         android:label="fragment_explore"
-        tools:layout="@layout/fragment_explore" />
+        tools:layout="@layout/fragment_explore" >
+        <action
+            android:id="@+id/action_exploreFragment2_to_imageUpload"
+            app:destination="@id/imageUpload" />
+    </fragment>
     <fragment
         android:id="@+id/buildFragment2"
         android:name="com.example.inertia.Dashboard.BuildFragment"
@@ -20,4 +24,13 @@
         android:name="com.example.inertia.Dashboard.TrainFragment"
         android:label="fragment_train"
         tools:layout="@layout/fragment_train" />
+    <fragment
+        android:id="@+id/imageUpload"
+        android:name="com.example.inertia.Dashboard.explore.ImageUpload"
+        android:label="fragment_image_upload"
+        tools:layout="@layout/fragment_image_upload" >
+        <action
+            android:id="@+id/action_imageUpload_to_exploreFragment2"
+            app:destination="@id/exploreFragment2" />
+    </fragment>
 </navigation>

@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.example.inertia.Dashboard.BuildFragment
-import com.example.inertia.Dashboard.ExploreFragment
+import com.example.inertia.Dashboard.explore.ExploreFragment
 import com.example.inertia.Dashboard.TrainFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
