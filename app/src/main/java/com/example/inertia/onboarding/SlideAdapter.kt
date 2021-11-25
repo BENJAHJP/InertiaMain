@@ -1,14 +1,19 @@
 package com.example.inertia.onboarding
 
-import android.view.View
-import androidx.viewpager.widget.PagerAdapter
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.lifecycle.Lifecycle
+import androidx.viewpager2.adapter.FragmentStateAdapter
 
-class SlideAdapter : PagerAdapter() {
-    override fun getCount(): Int {
+class SlideAdapter(list: ArrayList<Fragment>, fragmentManager: FragmentManager, lifecycle: Lifecycle) : FragmentStateAdapter(fragmentManager, lifecycle){
 
+    val fragmentList: ArrayList<Fragment> = list
+    override fun getItemCount(): Int {
+        return fragmentList.size
     }
 
-    override fun isViewFromObject(view: View, `object`: Any): Boolean {
-
+    override fun createFragment(position: Int): Fragment {
+        return fragmentList[position]
     }
+
 }
