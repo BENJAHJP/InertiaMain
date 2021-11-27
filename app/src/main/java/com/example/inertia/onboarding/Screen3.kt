@@ -8,7 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.example.inertia.MainActivity2
+import androidx.navigation.fragment.findNavController
 import com.example.inertia.R
 
 class Screen3 : Fragment() {
@@ -21,8 +21,7 @@ class Screen3 : Fragment() {
         val finish = view.findViewById<TextView>(R.id.finish)
 
         finish.setOnClickListener {
-            val intent = Intent (activity, MainActivity2::class.java)
-            activity?.startActivity(intent)
+            findNavController().navigate(R.id.action_onBoardingFragment_to_dashboardFragment)
             onBoardingFinished()
         }
         return view

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "35541263675",
+    "project_id": "text-detector-6f352",
+    "storage_bucket": "text-detector-6f352.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:35541263675:android:f3978730234b967516431e",
+        "android_client_info": {
+          "package_name": "com.example.inertia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "35541263675-ij34ukgloh502j1k8s6jr3e5a5cs4kud.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC992ZTUs8JRxk3OimzE5E1zPK6tfcEXVg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "35541263675-ij34ukgloh502j1k8s6jr3e5a5cs4kud.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

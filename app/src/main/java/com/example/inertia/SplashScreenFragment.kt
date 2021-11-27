@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentContainer
 import androidx.navigation.fragment.findNavController
 
 class SplashScreenFragment : Fragment() {
@@ -16,7 +17,7 @@ class SplashScreenFragment : Fragment() {
     ): View? {
         Handler().postDelayed({
             if(onBoardingFinished()){
-                findNavController().navigate(R.id.action_splashScreenFragment_to_activity)
+                findNavController().navigate(R.id.action_splashScreenFragment_to_dashboardFragment)
             }else{
                 findNavController().navigate(R.id.action_splashScreenFragment_to_onBoardingFragment)
             }
