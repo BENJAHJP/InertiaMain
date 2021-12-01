@@ -16,13 +16,13 @@ class Screen1 : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_screen1, container, false)
 
-        val viewPager = activity?.findViewById<ViewPager2>(R.id.viewPager)
+        /*val viewPager = activity?.findViewById<ViewPager2>(R.id.viewPager)
 
         val next = view.findViewById<TextView>(R.id.nextScreen1)
 
         next.setOnClickListener {
             viewPager?.currentItem = 1
-        }
+        }*/
         return view
     }
 }

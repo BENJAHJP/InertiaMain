@@ -48,7 +48,7 @@
 
     </LinearLayout>
 
-    <TextView
+    <!--<TextView
         android:id="@+id/nextScreen1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -60,5 +60,5 @@
         app:layout_constraintHorizontal_bias="0.90"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.90" />
+        app:layout_constraintVertical_bias="0.90" />-->
 </androidx.constraintlayout.widget.ConstraintLayout>

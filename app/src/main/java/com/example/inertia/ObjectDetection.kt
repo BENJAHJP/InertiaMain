@@ -1,5 +1,6 @@
 package com.example.inertia
 
+import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
@@ -18,9 +19,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import org.tensorflow.lite.DataType
 import org.tensorflow.lite.support.image.TensorImage
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
-import java.util.jar.Manifest
 
-class ImageUpload : AppCompatActivity() {
+class ObjectDetection : AppCompatActivity() {
     private lateinit var bitmap: Bitmap
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -80,11 +80,13 @@ class ImageUpload : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        val imageView: ImageView = findViewById(R.id.uploadImage1)
-        imageView.setImageURI(data?.data)
-        var uri: Uri? = data?.data
-        
-        bitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, uri)
+        if (requestCode == 100 && resultCode == Activity.RESULT_OK){
+            val imageView: ImageView = findViewById(R.id.uploadImage1)
+            imageView.setImageURI(data?.data)
+            var uri: Uri? = data?.data
+
+            bitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, uri)
+        }
     }
 
     private fun checkPermission(permission: String, requestCode: Int){

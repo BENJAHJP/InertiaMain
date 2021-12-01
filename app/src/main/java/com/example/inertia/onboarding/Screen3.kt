@@ -1,7 +1,5 @@
 package com.example.inertia.onboarding
 
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -21,15 +19,8 @@ class Screen3 : Fragment() {
         val finish = view.findViewById<TextView>(R.id.finish)
 
         finish.setOnClickListener {
-            findNavController().navigate(R.id.action_onBoardingFragment_to_dashboardFragment)
-            onBoardingFinished()
+            findNavController().navigate(R.id.action_onBoardingFragment_to_usersInfo)
         }
         return view
-    }
-    private fun onBoardingFinished(){
-        val sharedPref = requireActivity().getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
-        val editor = sharedPref.edit()
-        editor.putBoolean("Finished", true)
-        editor.apply()
     }
 }

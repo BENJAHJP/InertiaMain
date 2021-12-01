@@ -5,13 +5,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.navigation.fragment.findNavController
 import com.example.inertia.Dashboard.explore.ExploreFragment
 import com.example.inertia.R
+import com.example.inertia.Room.DatabaseConfig
+import com.example.inertia.Room.Entity.UsersEntity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class DashboardFragment : Fragment() {
+    lateinit var databaseConfig: DatabaseConfig
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -19,12 +23,25 @@ class DashboardFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_dashboard, container, false)
 
         val fragmentManager = requireActivity().supportFragmentManager
-        //val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
 
         val buildFragment = BuildFragment()
         val exploreFragment = ExploreFragment()
         val trainFragment = TrainFragment()
         val bottomNavigationView = view.findViewById<BottomNavigationView>(R.id.bottomNavigation)
+        val userText = view.findViewById<TextView>(R.id.userName)
+        val settingsButton = view.findViewById<ImageView>(R.id.userSettings)
+
+        settingsButton.setOnClickListener {
+            findNavController().navigate(R.id.action_dashboardFragment_to_userSettings2)
+        }
+
+        databaseConfig = DatabaseConfig.databaseGetInstance(requireActivity())!!
+        var id: Int = databaseConfig.usersDao()?.getLastId()!!
+
+        if (databaseConfig.usersDao()?.getData(id) == true){
+            val usersEntity: UsersEntity =  databaseConfig.usersDao()!!.getName(id)
+            userText.text = usersEntity.name
+        }
 
         makeCurrentFragment(exploreFragment)
         fragmentManager.beginTransaction()

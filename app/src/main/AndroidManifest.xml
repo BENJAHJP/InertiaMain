@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Inertia">
         <activity
-            android:name=".ImageUpload"
+            android:name=".ObjectDetection"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
