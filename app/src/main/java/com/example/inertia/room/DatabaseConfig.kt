@@ -1,11 +1,11 @@
-package com.example.inertia.Room
+package com.example.inertia.room
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.inertia.Room.Dao.UsersDao
-import com.example.inertia.Room.Entity.UsersEntity
+import com.example.inertia.room.dao.UsersDao
+import com.example.inertia.room.entity.UsersEntity
 
 @Database(
     entities = [UsersEntity::class],

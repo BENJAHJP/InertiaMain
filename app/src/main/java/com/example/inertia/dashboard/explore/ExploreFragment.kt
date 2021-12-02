@@ -1,4 +1,4 @@
-package com.example.inertia.Dashboard.explore
+package com.example.inertia.dashboard.explore
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -16,7 +16,7 @@ class ExploreFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_explore, container, false)
 
-        val fragmentManager = requireActivity().supportFragmentManager
+        //val fragmentManager = requireActivity().supportFragmentManager
         val textRecognitionCard = view.findViewById<MaterialCardView>(R.id.textRecognitionCard)
         textRecognitionCard.setOnClickListener {
             findNavController().navigate(R.id.action_dashboardFragment_to_imageUpload)

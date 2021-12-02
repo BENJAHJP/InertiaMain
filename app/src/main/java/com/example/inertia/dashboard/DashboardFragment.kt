@@ -1,4 +1,4 @@
-package com.example.inertia.Dashboard
+package com.example.inertia.dashboard
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,10 +8,10 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.navigation.fragment.findNavController
-import com.example.inertia.Dashboard.explore.ExploreFragment
+import com.example.inertia.dashboard.explore.ExploreFragment
 import com.example.inertia.R
-import com.example.inertia.Room.DatabaseConfig
-import com.example.inertia.Room.Entity.UsersEntity
+import com.example.inertia.room.DatabaseConfig
+import com.example.inertia.room.entity.UsersEntity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class DashboardFragment : Fragment() {

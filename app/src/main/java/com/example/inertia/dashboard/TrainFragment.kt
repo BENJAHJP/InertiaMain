@@ -1,4 +1,4 @@
-package com.example.inertia.Dashboard
+package com.example.inertia.dashboard
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

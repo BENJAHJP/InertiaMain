@@ -7,7 +7,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.FragmentContainer
+import androidx.fragment.app.FragmentActivity
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 
 class SplashScreenFragment : Fragment() {
@@ -17,17 +18,23 @@ class SplashScreenFragment : Fragment() {
     ): View? {
         Handler().postDelayed({
             if(onBoardingFinished()){
-                findNavController().navigate(R.id.action_splashScreenFragment_to_dashboardFragment)
+                lifecycleScope.launchWhenResumed {
+                    findNavController().navigate(R.id.action_splashScreenFragment_to_dashboardFragment)
+                }
             }else{
                 findNavController().navigate(R.id.action_splashScreenFragment_to_onBoardingFragment)
             }
         },5000)
-
         return inflater.inflate(R.layout.fragment_splash_screen, container, false)
     }
 
     private fun onBoardingFinished(): Boolean{
-        val sharedPref = requireActivity().getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
-        return sharedPref.getBoolean("Finished", false)
+        val activity: FragmentActivity? = activity
+        return if (activity !== null){
+            val sharedPref = requireActivity().getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
+            sharedPref.getBoolean("Finished", false)
+        }else{
+            true
+        }
     }
 }

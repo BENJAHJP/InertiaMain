@@ -1,4 +1,4 @@
-package com.example.inertia.Room.Entity
+package com.example.inertia.room.entity
 
 import androidx.room.Entity
 import androidx.room.Ignore

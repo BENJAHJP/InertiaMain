@@ -10,8 +10,8 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.inertia.R
-import com.example.inertia.Room.DatabaseConfig
-import com.example.inertia.Room.Entity.UsersEntity
+import com.example.inertia.room.DatabaseConfig
+import com.example.inertia.room.entity.UsersEntity
 import com.google.android.material.button.MaterialButton
 
 class UsersInfo : Fragment() {

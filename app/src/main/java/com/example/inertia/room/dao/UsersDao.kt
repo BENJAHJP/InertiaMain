@@ -1,10 +1,10 @@
-package com.example.inertia.Room.Dao
+package com.example.inertia.room.dao
 
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
-import com.example.inertia.Room.Entity.UsersEntity
+import com.example.inertia.room.entity.UsersEntity
 
 @Dao
 interface UsersDao{

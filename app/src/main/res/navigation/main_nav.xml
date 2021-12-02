@@ -34,7 +34,7 @@
     </fragment>
     <fragment
         android:id="@+id/dashboardFragment"
-        android:name="com.example.inertia.Dashboard.DashboardFragment"
+        android:name="com.example.inertia.dashboard.DashboardFragment"
         android:label="fragment_dashboard"
         tools:layout="@layout/fragment_dashboard" >
         <action
@@ -53,12 +53,16 @@
     </fragment>
     <fragment
         android:id="@+id/buildFragment"
-        android:name="com.example.inertia.Dashboard.BuildFragment"
+        android:name="com.example.inertia.dashboard.BuildFragment"
         android:label="fragment_build"
-        tools:layout="@layout/fragment_build" />
+        tools:layout="@layout/fragment_build" >
+        <action
+            android:id="@+id/action_buildFragment_to_imageUpload"
+            app:destination="@id/imageUpload" />
+    </fragment>
     <fragment
         android:id="@+id/trainFragment"
-        android:name="com.example.inertia.Dashboard.TrainFragment"
+        android:name="com.example.inertia.dashboard.TrainFragment"
         android:label="fragment_train"
         tools:layout="@layout/fragment_train" />
     <activity
@@ -78,7 +82,7 @@
     </fragment>
     <fragment
         android:id="@+id/userSettings2"
-        android:name="com.example.inertia.Dashboard.UserSettings"
+        android:name="com.example.inertia.dashboard.UserSettings"
         android:label="fragment_user_settings"
         tools:layout="@layout/fragment_user_settings" >
         <action

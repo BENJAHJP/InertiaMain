@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#FDFDFD"
     android:backgroundTint="@color/orange"
-    tools:context=".Dashboard.UserSettings">
+    tools:context=".dashboard.UserSettings">
 
     <LinearLayout
         android:id="@+id/linearLayout4"
@@ -52,6 +52,7 @@
             android:orientation="vertical">
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/springLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/settings_card"
