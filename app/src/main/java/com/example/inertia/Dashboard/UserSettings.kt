@@ -21,10 +21,11 @@ class UserSettings : Fragment() {
 
         val id: Int = databaseConfig.usersDao()!!.getLastId()
         var userText = view.findViewById<TextView>(R.id.userNameSettings)
+        val helloText: String = "Hello"
 
         if (databaseConfig.usersDao()?.getData(id) == true){
             val usersEntity: UsersEntity =  databaseConfig.usersDao()!!.getName(id)
-            userText.text = usersEntity.name
+            userText.text = "$helloText usersEntity.name"
         }
         return view
     }
