@@ -48,7 +48,8 @@
             app:destination="@id/imageUpload" />
         <action
             android:id="@+id/action_dashboardFragment_to_userSettings2"
-            app:destination="@id/userSettings2" />
+            app:destination="@id/userSettings2"
+            app:enterAnim="@android:anim/slide_in_left" />
     </fragment>
     <fragment
         android:id="@+id/buildFragment"
