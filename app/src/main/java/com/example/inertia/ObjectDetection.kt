@@ -28,21 +28,21 @@ class ObjectDetection : AppCompatActivity() {
         setContentView(R.layout.activity_image_upload)
 
         val fileName = "label.txt"
-        val inputString = application.assets.open(fileName).bufferedReader().use{ it?.readText() }
-        var townList = inputString.split("\n")
+        val inputString = application.assets.open(fileName).bufferedReader().use{ it.readText() }
+        val townList = inputString.split("\n")
 
-        var textView : TextView = findViewById(R.id.recognitionText1)
-        var uploadButton: FloatingActionButton = findViewById(R.id.imageButton1)
-        var detectButton: MaterialButton = findViewById(R.id.detectButton1)
+        val textView : TextView = findViewById(R.id.recognitionText1)
+        val uploadButton: FloatingActionButton = findViewById(R.id.imageButton1)
+        val detectButton: MaterialButton = findViewById(R.id.detectButton1)
 
         detectButton.setOnClickListener {
 
-            var resized: Bitmap = Bitmap.createScaledBitmap(bitmap,224,224,true)
+            val resized: Bitmap = Bitmap.createScaledBitmap(bitmap,224,224,true)
             val model = MobilenetV110224Quant.newInstance(this)
 
             val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1,224,224,3), DataType.UINT8)
-            var tensorBuffer = TensorImage.fromBitmap(resized)
-            var byteBuffer = tensorBuffer.buffer
+            val tensorBuffer = TensorImage.fromBitmap(resized)
+            val byteBuffer = tensorBuffer.buffer
 
             inputFeature0.loadBuffer(byteBuffer)
 
@@ -51,14 +51,14 @@ class ObjectDetection : AppCompatActivity() {
 
             val max = getMax(outputFeature0.floatArray)
 
-            textView.setText(townList[max])
+            textView.text = townList[max]
 
             model.close()
         }
 
         uploadButton.setOnClickListener {
             checkPermission(android.Manifest.permission.READ_EXTERNAL_STORAGE,100)
-            var intent: Intent = Intent(Intent.ACTION_GET_CONTENT)
+            val intent = Intent(Intent.ACTION_GET_CONTENT)
             intent.type = "image/*"
 
             startActivityForResult(intent, 100)
@@ -83,7 +83,7 @@ class ObjectDetection : AppCompatActivity() {
         if (requestCode == 100 && resultCode == Activity.RESULT_OK){
             val imageView: ImageView = findViewById(R.id.uploadImage1)
             imageView.setImageURI(data?.data)
-            var uri: Uri? = data?.data
+            val uri: Uri? = data?.data
 
             bitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, uri)
         }
@@ -92,8 +92,6 @@ class ObjectDetection : AppCompatActivity() {
     private fun checkPermission(permission: String, requestCode: Int){
         if(ContextCompat.checkSelfPermission(this,permission) == PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(this, arrayOf(permission),requestCode)
-        }else{
-
         }
     }
 

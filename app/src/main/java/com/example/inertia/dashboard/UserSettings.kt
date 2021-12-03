@@ -9,11 +9,10 @@ import android.widget.TextView
 import com.example.inertia.R
 import com.example.inertia.room.DatabaseConfig
 import com.example.inertia.room.entity.UsersEntity
-import kotlinx.coroutines.InternalCoroutinesApi
 
 class UserSettings : Fragment() {
-    lateinit var databaseConfig: DatabaseConfig
-    @InternalCoroutinesApi
+    private lateinit var databaseConfig: DatabaseConfig
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -26,16 +25,15 @@ class UserSettings : Fragment() {
 //            SpringAnimation(view, DynamicAnimation.TRANSLATION_Y,1200f)
 //            start()
 //        }
-
 //        val backButton = view.findViewById<ImageView>(R.id.backButtonSettings)
 
         val id: Int = databaseConfig.usersDao()!!.getLastId()
-        var userText = view.findViewById<TextView>(R.id.userNameSettings)
+        val userText = view.findViewById<TextView>(R.id.userNameSettings)
         val helloText = "Hello"
 
         if (databaseConfig.usersDao()?.getData(id) == true){
             val usersEntity: UsersEntity =  databaseConfig.usersDao()!!.getName(id)
-            userText.text = "$helloText" +" "+usersEntity.name
+            userText.text = "$helloText ${usersEntity.name}"
         }
         return view
     }

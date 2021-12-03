@@ -15,7 +15,7 @@ import com.example.inertia.room.entity.UsersEntity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class DashboardFragment : Fragment() {
-    lateinit var databaseConfig: DatabaseConfig
+    private lateinit var databaseConfig: DatabaseConfig
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -36,7 +36,7 @@ class DashboardFragment : Fragment() {
         }
 
         databaseConfig = DatabaseConfig.databaseGetInstance(requireActivity())!!
-        var id: Int = databaseConfig.usersDao()?.getLastId()!!
+        val id: Int = databaseConfig.usersDao()?.getLastId()!!
 
         if (databaseConfig.usersDao()?.getData(id) == true){
             val usersEntity: UsersEntity =  databaseConfig.usersDao()!!.getName(id)
